@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murotal Khambat</title>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        .judul-page{
+            justify-content: center;
+            display: flex;
+            margin-top: 2%;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .judul{
+            font-family: 'Inter', sans-serif;
+            font-size: 2em;
+        }
+
+        .deskripsi{
+            margin-top: -3%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        body {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 31.25rem;
+  margin: 6rem auto;
+}
+
+.label {
+  font-size: .625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: +1.3px;
+  margin-bottom: 1rem;
+}
+
+.searchBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#searchInput {
+  width: 100%;
+  height: 2.8rem;
+  background: #f5f5f5;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+#searchQuerySubmit {
+  width: 3.5rem;
+  height: 2.8rem;
+  margin-left: -3.5rem;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#searchQuerySubmit:hover {
+  cursor: pointer;
+}
+
+        .card-container {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 300px; /* Adjust the width as needed */
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            border-radius: 20px;
+
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            transform: scale(1.05); /* You can adjust the scaling factor */
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+        }
+       
+        /* nama surat (title) */
+        .nama-surat {
+            font-size: 30px;
+            font-weight: 500;
+            justify-content: center;
+            display: flex;
+            font-family: 'Inter', sans-serif;
+            color: #2B2B2B;
+        }
+
+        /* container dari place sama tipe */
+        .place-tipe-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -10%;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: #666666;
+        }
+
+        .place{
+            margin: 5px;
+        }
+
+        .tipe{
+            margin: 5px;
+        }
+
+        /* container dari surat sama ayat */
+        .surat-ayat-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+            
+        }
+
+        /* isian dari surat ayat container */
+
+        /* container ayat */
+        .ayat-container{
+            width: 200px;
+            height: 130px;
+            background-color: #A8D151;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 40px;
+            margin: 10px;
+        }
+
+        /* anak anak nya container ayat */
+        .ayat-text{
+            font-weight: 300;
+            margin-top: 15%;
+        }
+
+        .ayat{
+            margin-top: -5%;
+            font-size: 40px;
+        }
+
+        /* container surah */
+        .surah-container{
+            width: 100px;
+            height: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            margin: 10px;
+            border: solid #A8D151 2px;
+        }
+
+        /* anak anak nya container surah */
+        .surah-text{
+            font-weight: 300;
+            margin-top: 30%;
+            color: #2B2B2B;
+
+        }
+
+        .surah{
+            margin-top: -5%;
+            font-size: 40px;
+            color: #2B2B2B;
+        }
+
+        /* container audio */
+        .audio-container {
+            margin-top: 15px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width :100%;
+        }
+        
+        .audio-player {
+            justify-content: center;
+            display: flex;
+            padding: 5px;
+            background-color: #0E6634;
+            border-radius: 30px;
+            width: 90%; 
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="judul-page">
+            <div class="judul">
+                <h1>MUROTAL KHAMBAT</h1>
+            </div>
+            <div class="deskripsi">
+                <p>Murotal Khambat adalah nama yang ter inspirasi dari game Mortal Kombat<br>tapi melainkan game, Murotal Khambat ini menunjukan Audio Qur'an yang bisa di putar</p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="searchBar">
+              <input type="text" id="searchInput" name="searchQueryInput" placeholder="Search" value="" />
+              <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        <div class="card-container" id="card-container"></div>
+    </div>
+
+    <script>
+        const api = 'https://raw.githubusercontent.com/penggguna/QuranJSON/master/quran.json';
+        const cardContainer = document.getElementById('card-container');
+
+        fetch(api)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(el => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+
+                    const contentContainer = document.createElement('div');
+                    contentContainer.className = 'content-container';
+
+                    const namaSurat = document.createElement('h3');
+                    namaSurat.className = 'nama-surat';
+                    namaSurat.textContent = el.name;
+
+                    const suratAyatContainer = document.createElement('div');
+                    suratAyatContainer.className = 'surat-ayat-container';
+
+                    const ayatContainer = document.createElement('div');
+                    ayatContainer.className = 'ayat-container';
+
+                    const ayatText = document.createElement ('p');
+                    ayatText.className = 'ayat-text';
+                    ayatText.textContent = `Amount of Ayat`
+
+                    const ayat = document.createElement('p');
+                    ayat.className = 'ayat';
+                    ayat.textContent = `${el.number_of_ayah}`;
+
+                   const surahContainer = document.createElement('div');
+                   surahContainer.className = 'surah-container';
+
+                   const surahText = document.createElement ('p');
+                   surahText.className = 'surah-text';
+                   surahText.textContent = 'Surah';
+
+                    const surah = document.createElement('p');
+                    surah.className = 'surah';
+                    surah.textContent = `${el.number_of_surah}`;
+
+                    const placeTipeContainer = document.createElement('div');
+                    placeTipeContainer.className = 'place-tipe-container';
+
+                    const place = document.createElement('p');
+                    place.className = 'place';
+                    place.textContent = `Place: ${el.place}`;
+
+                    const tipe = document.createElement('p');
+                    tipe.className = 'tipe';
+                    tipe.textContent = `Type: ${el.type}`;
+
+                    const arab = document.createElement('p');
+                    arab.className = 'arab';
+                    arab.textContent = `Arab: ${el.name_translations.ar}`;
+
+                    const audioContainer = document.createElement('div');
+                    audioContainer.className = 'audio-container';
+
+                    const audio = document.createElement('audio');
+                    audio.className = 'audio-player';
+                    audio.setAttribute('controls', '');
+                    audio.src = el.recitation;
+
+                    
+                   surahContainer.appendChild(surahText)
+                    surahContainer.appendChild(surah)
+                   
+                    ayatContainer.appendChild(ayatText)
+                    ayatContainer.appendChild(ayat)
+                    
+                    placeTipeContainer.appendChild(place);
+                    placeTipeContainer.appendChild(tipe);
+
+                    suratAyatContainer.appendChild(ayatContainer);
+                    suratAyatContainer.appendChild(surahContainer);
+
+                    audioContainer.appendChild(audio);
+
+                    contentContainer.appendChild(namaSurat);
+                    contentContainer.appendChild(placeTipeContainer);
+                    contentContainer.appendChild(suratAyatContainer);
+                    contentContainer.appendChild(audioContainer);
+
+                    card.appendChild(contentContainer);
+
+                    cardContainer.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('An error occurred:', error);
+            });
+
+            const searchInput = document.getElementById('searchInput');
+
+            searchInput.addEventListener('input', function () {
+                const searchTerm = searchInput.value
+                .toLowerCase();
+
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+            const nama = card.querySelector('.nama-surat').textContent
+                .toLowerCase();
+            if (nama.includes(searchTerm)) {
+                card.style.display = 'flex'; 
+            } else {
+                card.style.display =
+                    'none';
+            }
+    });
+});
+
+    </script>
+</body>
+</html>
